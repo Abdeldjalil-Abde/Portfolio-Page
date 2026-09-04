@@ -1,0 +1,265 @@
+{
+  "products": [
+    {
+      "badge": "Desktop System",
+      "title": "InstitVia",
+      "problem": "إدارة المعاهد والطلبة والعمليات الإدارية بطريقة يدوية أو عبر أدوات متفرقة، مما يصعّب تنظيم البيانات ومتابعة الحضور والمدفوعات والتربصات.",
+      "desc": "نظام متكامل لإدارة وتسيير المعاهد، يجمع أهم العمليات الإدارية والأكاديمية في واجهة مكتبية موحدة.",
+      "features": [
+        "إدارة الطلبة",
+        "إدارة التخصصات والأفواج",
+        "إدارة التربصات والمدفوعات",
+        "تسجيل ومتابعة حضور الطلبة",
+        "تتبع تقدم الطالب في فترة التدريب",
+        "نظام صلاحيات للمستخدمين",
+        "إدارة حسابات المستخدمين",
+        "سجلات العمليات والأنشطة"
+      ],
+      "tech": [
+        "Python",
+        "PyQt5",
+        "SQLite"
+      ]
+    },
+    {
+      "badge": "Desktop Application",
+      "title": "Invoice Application",
+      "problem": "الحاجة إلى أداة مخصصة لتسهيل إنشاء وإدارة الفواتير وتنظيم بيانات الفوترة بدل الاعتماد على العمليات اليدوية.",
+      "desc": "تطبيق مكتبي مخصص لإدارة عمليات الفوترة بواجهة منظمة ومناسبة للاستخدام اليومي.",
+      "features": [
+        "إنشاء وإدارة الفواتير",
+        "تنظيم بيانات الفوترة",
+        "واجهة مكتبية مخصصة"
+      ],
+      "tech": [
+        "Python",
+        "PyQt5"
+      ]
+    },
+    {
+      "badge": "Web Application",
+      "title": "CMS Project",
+      "problem": "الحاجة إلى نظام ويب لإدارة المحتوى والبيانات من خلال واجهة منظمة وقابلة للتوسع.",
+      "desc": "تطبيق ويب لإدارة المحتوى تم تطويره باستخدام Spring Boot وThymeleaf مع قاعدة بيانات MySQL.",
+      "features": [
+        "إدارة المحتوى",
+        "واجهات ويب ديناميكية",
+        "التعامل مع قاعدة البيانات",
+        "بنية Backend منظمة"
+      ],
+      "tech": [
+        "Java 22",
+        "Spring Boot",
+        "Thymeleaf",
+        "MySQL",
+        "Maven"
+      ]
+    },
+    {
+      "badge": "AI / Sales Forecasting",
+      "title": "SalesCast AI",
+      "problem": "الحاجة إلى الاستفادة من بيانات المبيعات لفهم الاتجاهات المستقبلية ودعم اتخاذ القرارات التجارية.",
+      "desc": "تطبيق ويب يعتمد على تقنيات الذكاء الاصطناعي لتحليل بيانات المبيعات وتقديم حلول تنبؤية، مع استهداف المتاجر والمؤسسات التجارية.",
+      "features": [
+        "تحليل بيانات المبيعات",
+        "التنبؤ بالمبيعات",
+        "معالجة البيانات",
+        "عرض النتائج عبر واجهة ويب"
+      ],
+      "tech": [
+        "Python",
+        "Flask",
+        "Pandas",
+        "Scikit-learn"
+      ]
+    },
+    {
+      "badge": "IoT Monitoring Platform",
+      "title": "Eco-port",
+      "problem": "الحاجة إلى جمع بيانات عدة حساسات وتخزينها ومراقبتها بطريقة منظمة تسمح بتحليل البيانات الزمنية.",
+      "desc": "منصة لمراقبة البيانات القادمة من منظومة IoT تعتمد على 6 أنواع من الحساسات وتخزين البيانات في InfluxDB Cloud.",
+      "features": [
+        "جمع بيانات الحساسات",
+        "دعم 6 أنواع من الحساسات",
+        "تخزين البيانات الزمنية",
+        "مراقبة البيانات",
+        "تحليل البيانات"
+      ],
+      "tech": [
+        "Python",
+        "IoT",
+        "InfluxDB Cloud"
+      ]
+    },
+    {
+      "badge": "AI / Computer Vision",
+      "title": "SmartFruit AI",
+      "problem": "الحاجة إلى الاستفادة من الذكاء الاصطناعي والرؤية الحاسوبية في تحليل وتصنيف صور الفواكه.",
+      "desc": "تطبيق يعتمد على Deep Learning وComputer Vision لمعالجة الصور وتنفيذ مهام ذكية متعلقة بتحليل الفواكه.",
+      "features": [
+        "معالجة الصور",
+        "تحليل الصور باستخدام الذكاء الاصطناعي",
+        "تصنيف الصور",
+        "نموذج Deep Learning",
+        "واجهة ويب للتفاعل مع النموذج"
+      ],
+      "tech": [
+        "Python",
+        "Flask",
+        "PyTorch",
+        "OpenCV"
+      ]
+    },
+    {
+      "badge": "Cybersecurity / AI",
+      "title": "FedCNN-IDS",
+      "problem": "الحاجة إلى نظام كشف تسلل يستفيد من Deep Learning وFederated Learning مع تدريب موزع للنماذج.",
+      "desc": "نظام كشف تسلل قائم على Federated Deep Learning، يعتمد على نموذج CNN للكشف عن الأنشطة الشبكية المشبوهة.",
+      "features": [
+        "Intrusion Detection",
+        "Federated Learning",
+        "Deep Learning",
+        "CNN-based Detection",
+        "تدريب موزع للنموذج",
+        "تحليل بيانات الشبكة"
+      ],
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "CNN",
+        "Federated Learning"
+      ]
+    },
+    {
+      "badge": "Networking / SDN",
+      "title": "SDN Research Project",
+      "problem": "دراسة وتطبيق الاتجاهات الحديثة في Software-Defined Networking وفصل مستوى التحكم عن مستوى تمرير البيانات.",
+      "desc": "مشروع بحثي وتقني حول Software-Defined Networking باستخدام بيئة محاكاة ومكونات شبكية مفتوحة المصدر.",
+      "features": [
+        "Software-Defined Networking",
+        "Network Simulation",
+        "Mininet",
+        "Open vSwitch",
+        "اختبار سيناريوهات الشبكات"
+      ],
+      "tech": [
+        "SDN",
+        "Mininet",
+        "Open vSwitch",
+        "Linux"
+      ]
+    }
+  ],
+  "projectFilters": [
+    "الكل",
+    "Web",
+    "Desktop",
+    "AI",
+    "Software",
+    "Academic"
+  ],
+  "projects": [
+    {
+      "title": "InstitVia",
+      "type": "Desktop",
+      "desc": "نظام متكامل لإدارة وتسيير المعاهد والطلبة والتخصصات والأفواج والتربصات والمدفوعات والحضور.",
+      "tech": [
+        "Python",
+        "PyQt5",
+        "SQLite"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "Invoice Application",
+      "type": "Desktop",
+      "desc": "تطبيق مكتبي مخصص لإدارة عمليات الفوترة وتنظيم بيانات الفواتير.",
+      "tech": [
+        "Python",
+        "PyQt5"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "CMS Project",
+      "type": "Software",
+      "desc": "تطبيق ويب لإدارة المحتوى والبيانات باستخدام Spring Boot وThymeleaf وMySQL.",
+      "tech": [
+        "Java 22",
+        "Spring Boot",
+        "Thymeleaf",
+        "MySQL"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "SalesCast AI",
+      "type": "AI",
+      "desc": "تطبيق ويب لتحليل بيانات المبيعات وتقديم حلول تنبؤية باستخدام تقنيات الذكاء الاصطناعي.",
+      "tech": [
+        "Python",
+        "Flask",
+        "Pandas",
+        "Scikit-learn"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "Eco-port",
+      "type": "AI",
+      "desc": "منصة لمراقبة بيانات منظومة IoT وجمع بيانات 6 أنواع من الحساسات وتخزينها في InfluxDB Cloud.",
+      "tech": [
+        "Python",
+        "IoT",
+        "InfluxDB Cloud"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "SmartFruit AI",
+      "type": "AI",
+      "desc": "تطبيق يعتمد على Deep Learning وComputer Vision لمعالجة وتحليل وتصنيف صور الفواكه.",
+      "tech": [
+        "Python",
+        "Flask",
+        "PyTorch",
+        "OpenCV"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "FedCNN-IDS",
+      "type": "AI",
+      "desc": "نظام كشف تسلل قائم على Federated Deep Learning ويعتمد على CNN لتحليل الأنشطة الشبكية.",
+      "tech": [
+        "Python",
+        "TensorFlow",
+        "Keras",
+        "CNN",
+        "Federated Learning"
+      ],
+      "demo": null,
+      "github": null
+    },
+    {
+      "title": "SDN Research Project",
+      "type": "Academic",
+      "desc": "مشروع بحثي وتقني حول Software-Defined Networking باستخدام Mininet وOpen vSwitch.",
+      "tech": [
+        "SDN",
+        "Mininet",
+        "Open vSwitch",
+        "Linux"
+      ],
+      "demo": null,
+      "github": null
+    }
+  ]
+}
