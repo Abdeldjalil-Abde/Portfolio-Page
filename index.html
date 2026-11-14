@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR =================== -->
 <header id="siteHeader">
   <div class="container nav-inner">
     <a href="#home" class="logo">
@@ -186,17 +186,17 @@
         <div class="form-row">
           <div class="field">
             <label for="fname">الاسم</label>
-            <input id="fname" name="name" type="text" placeholder="اسمك الكامل" required>
+            <input id="fname" name="name" type="text" placeholder="اسمك الكامل" maxlength="100" autocomplete="name" required>
           </div>
           <div class="field">
             <label for="femail">البريد الإلكتروني</label>
-            <input id="femail" name="email" type="email" placeholder="example@mail.com" required>
+            <input id="femail" name="email" type="email" placeholder="example@mail.com" maxlength="150" autocomplete="email" required>
           </div>
         </div>
         <div class="form-row">
           <div class="field">
             <label for="fphone">رقم الهاتف</label>
-            <input id="fphone" name="phone" type="tel" placeholder="+213 6XX XX XX XX">
+            <input id="fphone" name="phone" type="tel" placeholder="+213 6XX XX XX XX" maxlength="30" autocomplete="tel">
           </div>
           <div class="field">
             <label for="fservice">نوع الخدمة</label>
@@ -212,11 +212,19 @@
         </div>
         <div class="field">
           <label for="fmsg">رسالتك</label>
-          <textarea id="fmsg" name="message" placeholder="صف فكرتك أو المشكلة التي تريد حلها..." required></textarea>
+          <textarea id="fmsg" name="message" placeholder="صف فكرتك أو المشكلة التي تريد حلها..." maxlength="3000" required></textarea>
         </div>
+
+        <!-- Honeypot: حقل مخفي لصد البوتات — لا تحذفه ولا تعرضه -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label for="fwebsite">Website</label>
+          <input id="fwebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
         <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">إرسال الطلب</button>
         <p class="form-note">لن نستخدم بياناتك إلا للرد على طلبك.</p>
         <div class="form-success" id="formSuccess">تم استلام طلبك بنجاح، سنتواصل معك في أقرب وقت ممكن.</div>
+        <div id="formError" role="alert" style="display:none;margin-top:14px;padding:12px 14px;border-radius:10px;background:rgba(255,80,80,.12);border:1px solid rgba(255,80,80,.4);color:#ff9a9a;font-size:.92rem;"></div>
       </form>
     </div>
   </div>

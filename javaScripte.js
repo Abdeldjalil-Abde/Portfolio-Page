@@ -449,11 +449,98 @@ const io = new IntersectionObserver(
 revealEls.forEach((el) => io.observe(el));
 
 /* ---------- Contact form (client-side only) ---------- */
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  document.getElementById("formSuccess").classList.add("show");
-  this.reset();
-});
+// document.getElementById("contactForm").addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   document.getElementById("formSuccess").classList.add("show");
+//   this.reset();
+// });
+
+/* ---------- Contact form → Google Apps Script (Google Sheet + email) ----------
+   في ملف javaScripte.js: احذف الكتلة القديمة
+       /* ---------- Contact form (client-side only) ---------- * /
+       document.getElementById("contactForm").addEventListener("submit", ...);
+   وضع هذا الكود مكانها.
+-------------------------------------------------------------------------- */
+
+// ضع هنا رابط Web app الذي ستحصل عليه من Google Apps Script (ينتهي بـ /exec)
+const CONTACT_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCzsz-G_Q5dBCgwkoNY9pmpQBE0osXBNtux-BcSMfE3wvhSTnpUX4cHPNdVQJOozE/exec";
+
+(function () {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+  const okBox = document.getElementById("formSuccess");
+  const errBox = document.getElementById("formError");
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const loadedAt = Date.now();
+  const COOLDOWN_MS = 30000;
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.style.display = "block";
+  }
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    okBox.classList.remove("show");
+    errBox.style.display = "none";
+
+    if (!CONTACT_ENDPOINT || CONTACT_ENDPOINT.indexOf("PASTE_") === 0) {
+      console.error("CONTACT_ENDPOINT غير مضبوط.");
+      showError("خدمة الإرسال غير مفعّلة حاليًا. يرجى التواصل عبر البريد أو واتساب.");
+      return;
+    }
+
+    // منع الإرسال المتكرر السريع
+    try {
+      const last = Number(localStorage.getItem("ogx_last_submit") || 0);
+      if (Date.now() - last < COOLDOWN_MS) {
+        showError("تم إرسال طلبك للتو، يرجى الانتظار قليلًا قبل إرسال طلب آخر.");
+        return;
+      }
+    } catch (_) {}
+
+    const fd = new FormData(form);
+    const payload = {
+      name: (fd.get("name") || "").trim(),
+      email: (fd.get("email") || "").trim(),
+      phone: (fd.get("phone") || "").trim(),
+      service: fd.get("service") || "",
+      message: (fd.get("message") || "").trim(),
+      website: fd.get("website") || "", // honeypot (يجب أن يبقى فارغًا)
+      elapsed: Date.now() - loadedAt,
+    };
+
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "جارٍ الإرسال...";
+
+    try {
+      // نرسل نصًا عاديًا (text/plain) لتجنب طلب preflight الذي لا يدعمه Apps Script
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        redirect: "follow",
+      });
+      const out = await res.json();
+      if (!out.ok) {
+        throw new Error(out.error || "server");
+      }
+      form.reset();
+      okBox.classList.add("show");
+      try { localStorage.setItem("ogx_last_submit", String(Date.now())); } catch (_) {}
+    } catch (err) {
+      console.error("Contact form error:", err);
+      showError("تعذّر إرسال الطلب. حاول مرة أخرى، أو راسلنا مباشرة عبر البريد الإلكتروني أو واتساب.");
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
+})();
+
+
+
+
 
 /* ---------- Footer year ---------- */
 document.getElementById("year").textContent = new Date().getFullYear();
