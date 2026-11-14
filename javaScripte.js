@@ -448,21 +448,6 @@ const io = new IntersectionObserver(
 );
 revealEls.forEach((el) => io.observe(el));
 
-/* ---------- Contact form (client-side only) ---------- */
-// document.getElementById("contactForm").addEventListener("submit", function (e) {
-//   e.preventDefault();
-//   document.getElementById("formSuccess").classList.add("show");
-//   this.reset();
-// });
-
-/* ---------- Contact form → Google Apps Script (Google Sheet + email) ----------
-   في ملف javaScripte.js: احذف الكتلة القديمة
-       /* ---------- Contact form (client-side only) ---------- * /
-       document.getElementById("contactForm").addEventListener("submit", ...);
-   وضع هذا الكود مكانها.
--------------------------------------------------------------------------- */
-
-// ضع هنا رابط Web app الذي ستحصل عليه من Google Apps Script (ينتهي بـ /exec)
 const CONTACT_ENDPOINT = "https://script.google.com/macros/s/AKfycbyCzsz-G_Q5dBCgwkoNY9pmpQBE0osXBNtux-BcSMfE3wvhSTnpUX4cHPNdVQJOozE/exec";
 
 (function () {
